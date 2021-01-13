@@ -6,7 +6,7 @@ namespace ZurumPark.Entities
     public class NationalPark
     {
         [Key]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [Required]
         public string State { get; set; }
         [Required]
