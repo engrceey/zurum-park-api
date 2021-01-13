@@ -38,7 +38,7 @@ namespace ZurumPark.Controllers
         }
 
         
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetNationalPark")]
         public IActionResult GetNationalPark(int id)
         {
             var value = _repository.GetNationalPark(id);
@@ -73,7 +73,28 @@ namespace ZurumPark.Controllers
                 return StatusCode(500, ModelState);
             }
 
-            return Ok();
+            return CreatedAtRoute("GetNationalPark", new { id = park.Id}, park);
+        }
+
+
+        [HttpPatch("{id}", Name = "UpdateNationalPark")]
+        public IActionResult UpdateNationalPark(int id, [FromBody] NationalParkDto nationalPark)
+        {
+
+            if (nationalPark == null || id != nationalPark.Id) 
+            {
+                return BadRequest(ModelState);         
+            }
+
+             var park = _mapper.Map<NationalPark>(nationalPark);
+
+            if (!_repository.UpdateNationalPark(park))
+            {
+                ModelState.AddModelError("", $"Something went wrong when updating the record {park.Name}");
+                return StatusCode(500, ModelState);
+            }
+
+            return NoContent();
         }
     }
 }
