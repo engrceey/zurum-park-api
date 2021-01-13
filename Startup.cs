@@ -15,6 +15,8 @@ using Microsoft.OpenApi.Models;
 using ZurumPark.Data;
 using ZurumPark.Repository;
 using ZurumPark.Repository.IRepository;
+using AutoMapper;
+
 
 namespace ZurumPark
 {
@@ -36,7 +38,9 @@ namespace ZurumPark
             services.AddDbContext<ApplicationDbContext>(option => 
                                 option.UseSqlite(Configuration.GetConnectionString("Sqlite")));
 
-            services.AddScoped<INationalParkRepository, NationalParkRepository>();                   
+            services.AddScoped<INationalParkRepository, NationalParkRepository>();
+            
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddSwaggerGen(c =>
             {

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "7cEOWMZbdwXuBqkBD+mGkOGPjEHNTL3aZZdsCdeCoAoC45NpQ7DHZRnlg8m+eXfjYUQe1uzXjCwk4tGoGrfMvw==",
+  "dgSpecHash": "w22FE+vi98POyD2IJ2pwvAGc+E3nJ3C7trQCNSg4q3Ap0hzeHk7ffN+Oss8nyPAckdu7S3XVW05SVbpG4Xfa9Q==",
   "success": true,
   "projectFilePath": "/Users/zurum/Desktop/ZurumPark/ZurumPark.csproj",
   "expectedPackageFiles": [
+    "/Users/zurum/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/Users/zurum/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.0/automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "/Users/zurum/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/zurum/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/5.0.1/microsoft.aspnetcore.authentication.jwtbearer.5.0.1.nupkg.sha512",
     "/Users/zurum/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/5.0.1/microsoft.aspnetcore.authentication.openidconnect.5.0.1.nupkg.sha512",
@@ -47,6 +49,7 @@
     "/Users/zurum/.nuget/packages/system.diagnostics.diagnosticsource/5.0.1/system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
     "/Users/zurum/.nuget/packages/system.identitymodel.tokens.jwt/6.7.1/system.identitymodel.tokens.jwt.6.7.1.nupkg.sha512",
     "/Users/zurum/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
+    "/Users/zurum/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
     "/Users/zurum/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
