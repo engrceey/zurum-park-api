@@ -35,17 +35,33 @@ namespace ZurumPark
 
             services.AddControllers();
 
-            services.AddDbContext<ApplicationDbContext>(option => 
+            services.AddDbContext<ApplicationDbContext>(option =>
                                 option.UseSqlite(Configuration.GetConnectionString("Sqlite")));
 
             services.AddScoped<INationalParkRepository, NationalParkRepository>();
-            
+            services.AddScoped<ITrailRepository, TrailRepository>();
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ZurumPark", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "ZurumPark",
+                    Version = "v1",
+                    Description = "Zurum Park API",
+
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact()
+                    {
+                        Email = "ogbondacristian@gmail.com",
+                        Name = "Zurum",
+                        Url = new Uri("https://www.linkedin.com/in/zurum-ogbonda-777152aa/")
+                    },
+                }
+            );
+
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
