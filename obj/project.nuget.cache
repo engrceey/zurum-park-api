@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tyfDbf1+jpk43JFB52MoxnpgxNA5WRfTrXojTyoUxnNUs5vq2XivS6iWSVvY+VA/UQIM7NugqeFavGZuO0K9eA==",
+  "dgSpecHash": "r3bmop3sP+O45BNVhUzNyk1wnD8RpMZQaTv30rlrKH0HrnljRtNJ0zJSSih3TjTaDdFjIe1Vfy8a2CjO/C9HfQ==",
   "success": true,
   "projectFilePath": "/Users/zurum/Desktop/ZurumPark/ZurumPark.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "/Users/zurum/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/zurum/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/5.0.1/microsoft.aspnetcore.authentication.jwtbearer.5.0.1.nupkg.sha512",
     "/Users/zurum/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/5.0.1/microsoft.aspnetcore.authentication.openidconnect.5.0.1.nupkg.sha512",
+    "/Users/zurum/.nuget/packages/microsoft.aspnetcore.mvc.versioning/4.2.0/microsoft.aspnetcore.mvc.versioning.4.2.0.nupkg.sha512",
     "/Users/zurum/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/zurum/.nuget/packages/microsoft.data.sqlite.core/5.0.2/microsoft.data.sqlite.core.5.0.2.nupkg.sha512",
     "/Users/zurum/.nuget/packages/microsoft.dotnet.platformabstractions/3.1.6/microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",

@@ -64,3 +64,4 @@
 /Users/zurum/Desktop/ZurumPark/obj/Debug/net5.0/ref/ZurumPark.dll
 /Users/zurum/Desktop/ZurumPark/obj/Debug/net5.0/ZurumPark.pdb
 /Users/zurum/Desktop/ZurumPark/obj/Debug/net5.0/ZurumPark.genruntimeconfig.cache
+/Users/zurum/Desktop/ZurumPark/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.Versioning.dll

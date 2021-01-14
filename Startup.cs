@@ -42,10 +42,15 @@ namespace ZurumPark
             services.AddScoped<ITrailRepository, TrailRepository>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddApiVersioning(options => {
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.DefaultApiVersion=new ApiVersion(1,0);
+                options.ReportApiVersions = true;
+            });
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
+                c.SwaggerDoc("parkv1", new OpenApiInfo
                 {
                     Title = "ZurumPark",
                     Version = "v1",
@@ -62,6 +67,25 @@ namespace ZurumPark
 
             });
 
+            // services.AddSwaggerGen(c =>
+            // {
+            //     c.SwaggerDoc("trailv1", new OpenApiInfo
+            //     {
+            //         Title = "ZurumTrail",
+            //         Version = "v2",
+            //         Description = "Zurum Trail API",
+
+            //         Contact = new Microsoft.OpenApi.Models.OpenApiContact()
+            //         {
+            //             Email = "ogbondacristian@gmail.com",
+            //             Name = "Zurum",
+            //             Url = new Uri("https://www.linkedin.com/in/zurum-ogbonda-777152aa/")
+            //         },
+            //     }
+            // );
+
+            // });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,7 +95,8 @@ namespace ZurumPark
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ZurumPark v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/parkv1/swagger.json", "ZurumPark v1"));
+                // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/trailv1/swagger.json", "ZurumTrail v2"));
             }
 
             app.UseHttpsRedirection();

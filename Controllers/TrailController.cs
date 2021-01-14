@@ -10,6 +10,7 @@ namespace ZurumPark.Controllers
     
     [Route("api/[controller]")]
     [ApiController]
+    // [ApiExplorerSettings(GroupName="trailv1")]
     public class TrailController : Controller
     {
         private readonly IMapper _mapper;
@@ -82,7 +83,7 @@ namespace ZurumPark.Controllers
                 return StatusCode(500, ModelState);
             }
 
-            return CreatedAtRoute("Trail", new { id = park.Id }, park);
+            return CreatedAtRoute("GetTrail", new { id = park.Id }, park);
         }
 
 

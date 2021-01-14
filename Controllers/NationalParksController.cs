@@ -10,6 +10,7 @@ namespace ZurumPark.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+    // [ApiExplorerSettings(GroupName="parkv1")]
     public class NationalParksController : Controller
     {
         private readonly IMapper _mapper;
