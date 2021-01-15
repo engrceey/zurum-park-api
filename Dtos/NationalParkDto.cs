@@ -10,6 +10,7 @@ namespace ZurumPark.Dtos
         public string State { get; set; }
         [Required]
         public string Name { get; set; }
+        public byte[] Pictures { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime Established { get; set; }
 

@@ -57,6 +57,35 @@ namespace ZurumPark.Controllers
             return Ok(park);
         }
 
+
+
+        // Get - Trail/Get/id
+        [HttpGet("Get/{id}")]
+        [ProducesResponseType(200, Type = typeof(TrailDto))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [ProducesDefaultResponseType]
+        public IActionResult GetTrailInNationalPark(int nationalParkId)
+        {
+            var listValues = _repository.GetTrailsInNationalPark(nationalParkId);
+
+            if (listValues == null)
+            {
+                return NotFound();
+            }
+
+            var objList = new List<TrailDto>();
+
+            foreach(var values in listValues)
+            {
+                objList.Add(_mapper.Map<TrailDto>(values));
+            }
+            
+            return Ok(objList);
+        }
+
+
+
         [HttpPost]
         [ProducesResponseType(201, Type = typeof(TrailDto))]
         [ProducesResponseType(400)] 
