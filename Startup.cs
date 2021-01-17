@@ -16,7 +16,9 @@ using ZurumPark.Data;
 using ZurumPark.Repository;
 using ZurumPark.Repository.IRepository;
 using AutoMapper;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace ZurumPark
 {
@@ -40,6 +42,7 @@ namespace ZurumPark
 
             services.AddScoped<INationalParkRepository, NationalParkRepository>();
             services.AddScoped<ITrailRepository, TrailRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddApiVersioning(options => {
@@ -64,6 +67,30 @@ namespace ZurumPark
                     },
                 }
             );
+
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
+
+            var appSettings = appSettingsSection.Get<AppSettings>();
+            var Key = Encoding.ASCII.GetBytes(appSettings.Secret);
+
+            services.AddAuthentication(x => 
+            {
+               x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+               x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+            })
+            .AddJwtBearer(x =>{
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey =new SymmetricSecurityKey(Key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
 
             });
 
@@ -102,7 +129,13 @@ namespace ZurumPark
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+            );
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
