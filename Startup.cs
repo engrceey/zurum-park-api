@@ -78,12 +78,13 @@ namespace ZurumPark
             {
                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+               x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
 
             })
             .AddJwtBearer(x =>{
                 x.RequireHttpsMetadata = false;
                 x.SaveToken = true;
-                x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey =new SymmetricSecurityKey(Key),
