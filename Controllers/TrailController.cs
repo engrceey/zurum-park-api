@@ -8,10 +8,10 @@ using ZurumPark.Repository.IRepository;
 namespace ZurumPark.Controllers
 {
     
-    [Route("api/[controller]")]
+    [Route("api/trail")]
     [ApiController]
     // [ApiExplorerSettings(GroupName="trailv1")]
-    public class TrailController : Controller
+    public class TrailController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly ITrailRepository _repository;

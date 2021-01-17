@@ -8,10 +8,10 @@ using ZurumPark.Repository.IRepository;
 namespace ZurumPark.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("api/NationalParks")]
     [ApiController]
     // [ApiExplorerSettings(GroupName="parkv1")]
-    public class NationalParksController : Controller
+    public class NationalParksController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly INationalParkRepository _repository;

@@ -11,7 +11,7 @@ namespace ZurumPark.Controllers
     [Route("api/[controller]")]
     [ApiController]
     // [ApiExplorerSettings(GroupName="parkv1")]
-    public class NationalParksV2Controller : Controller
+    public class NationalParksV2Controller : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly INationalParkRepository _repository;
